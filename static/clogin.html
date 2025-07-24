@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log into you account</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- <link rel="stylesheet" href="styles/clogin.css"> -->
+</head>
+
+<body class="bg-purple-900/40">
+    <h1 class="w-full mx-auto text-center mt-12 mb-6 text-3xl leading-10">Welcome to Find Your Fashion! Please login
+        with your credentials.</h1>
+    <div class="content w-1/4 m-auto rounded-2xl py-4 border-black border-2">
+
+        <div class="center">
+            <div class="imagebox">
+                <img src="./img/loginbg.png" alt="" class="h-40 w-auto m-auto mb-4">
+            </div>
+            <div class="frmpg">
+                <form action="/login/submit" method="post">
+                    <div
+                        class="excreds w-full text-center py-2 border-black border-y-1 font-semibold text-xl hover:underline hover:cursor-default">
+                        Enter your Credentials</div>
+                    <div class="creds w-full">
+                        <label for="uid" class="block w-3/4 m-auto text-center mt-3">Enter User-ID</label>
+                        <div class="centre-input"><input type="text" id="uid" name="cuser"
+                                class="block w-3/4 m-auto outline-none px-4 pb-2 text-center border-b-1" required></div>
+                        <label for="password" class="block w-3/4 m-auto text-center mt-3">Enter Password</label>
+                        <div class="centre-input"><input type="password" id="password" name="cpwd"
+                                class="block w-3/4 m-auto outline-none px-4 pb-2 text-center border-b-1" required><br>
+                        </div>
+                    </div>
+                    <div class="btn"><button type="submit" id="login"
+                            class="w-10/12 block m-auto py-2 text-white text-xl rounded-md bg-green-700 border-green-900 border-3 hover:bg-green-900 hover:border-green-800">Login</button>
+                    </div>
+                </form>
+                <div class="redirect w-full text-center mt-4">New user? Click here to <a href="register.html"
+                        class="text-blue-600 hover:underline hover:text-blue-800">sign up</a></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

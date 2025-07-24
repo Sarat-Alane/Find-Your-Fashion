@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Cart</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- <link rel="stylesheet" href="styles/cart.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+</head>
+<body class="w-full">
+
+    
+  <nav class="navigation-bar bg-purple-800 text-white flex items-stretch">
+    <img class="logo w-40 h-20 border-y-purple-800 border-2" src="t.png">
+  </nav>
+    
+
+    <h2 class="w-full text-center text-3xl my-6">Review your Cart</h2>
+
+    <table class="w-[96%] m-auto bg-purple-900/40 border-black border-2">
+      <tr class="border-black border-b-2">
+        <th class="text-center py-2 w-1/4  border-black border-r-2">Product Image</th>
+        <th class="text-center py-2 w-1/4  border-black border-r-2">Product Name</th>
+        <th class="text-center py-2 w-1/12  border-black border-r-2">Size</th>
+        <th class="text-center py-2 w-1/12  border-black border-r-2">Quantity</th>
+        <th class="text-center py-2 w-1/6  border-black border-r-2">Price (in Rs.)</th>
+        <th class="text-center py-2 w-1/6  border-black border-r-2">Amount</th>
+      </tr>
+      <% cartDetails.forEach(element => { %>
+      <tr class="border-black border-b-2">
+        <td class="w-1/4 py-4  border-black border-2"><img src="prodimg/<%= element.filename %>" alt="image" class="w-1/2 h-auto m-auto"></td>
+        <td class="w-1/4 py-4 text-center  border-black border-2"><%= element.category %> <%= element.wear %></td>
+        <td class="w-1/12 py-4 text-center  border-black border-2"><%= element.wearsize %></td>
+        <td class="w-1/12 py-4 text-center  border-black border-2"><%= element.qty %></td>
+        <td class="w-1/6 py-4 text-center  border-black border-2"><%= element.price_per_item %></td>
+        <td class="w-1/6 py-4 text-center  border-black border-2"><%= element.amount %></td>
+      </tr>
+     <% }); %>
+      
+      <tr>
+        <td colspan="5" class="py-6"></td>
+        <td class="text-center w-1/6 py-6"><strong>Total Price:<%= totalprice[0].totalprice %></strong></td>
+      </tr>
+
+    </table>
+<form action="/checkout" method="get" class="my-8">
+  <button class="buy bg-green-700 text-white block mx-auto px-6 py-3 text-lg rounded-md border-green-900 border-3 hover:bg-green-900 hover:border-green-700" type="submit">Proceed To Checkout &rarr;</button>
+</form>
+</body>
+</html>
+    
+
+    

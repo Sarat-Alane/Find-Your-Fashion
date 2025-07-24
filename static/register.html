@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up with your details</title>
+    <!-- <link rel="stylesheet" href="styles/csignup.css"> -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Sacramento&display=swap"
+        rel="stylesheet"> -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body class="w-full bg-purple-900/40">
+    <div class="content">
+        <h3 class="w-full mx-auto text-center mt-12 mb-6 text-3xl leading-10">Welcome to Find Your Fashion!!! Please fill up your details below.</h3>
+        <div class="centrebox w-4/12 m-auto px-6 py-6 rounded-2xl border-black border-1">
+            <div class="frmpage">
+                <form action="/register/submit" onsubmit="return validateForm()" method="post">
+                    <div class="uname">
+                        <div class="firstname">
+                            <label for="fname" class="w-[42%] inline-block text-lg py-3">Enter First Name:</label>
+                            <input class="outline-none border-black border-b-1" type="text" id="fname" name="fname" required>
+                        </div>
+                        <div class="lastname">
+                            <label for="lname" class="w-[42%] inline-block text-lg py-3">Enter Last Name:</label>
+                            <input class="outline-none border-black border-b-1" type="text" id="lname" name="lname" required>
+                        </div>
+                    </div>
+                    <div class="personals">
+                        <div class="gender">
+                            <label for="gender-m" class="w-[42%] inline-block text-lg py-3">Gender:</label>
+                            <label for="gender-m">Male</label><input type="radio" name="gender" id="gender-m" value="M" required>
+                            <label for="gender-f">Female</label><input type="radio" name="gender" id="gender-f" value="F">
+                        </div>
+                        <div class="date">
+                            <label for="dob" class="w-[42%] inline-block text-lg py-3">Date of Birth:</label>
+                            <input class="outline-none border-black border-b-1" type="date" name="DOB" id="dob" required>
+                        </div>
+                    </div>
+                    <div class="contact">
+                        <div class="mobno">
+                            <label for="mobile" class="w-[42%] inline-block text-lg py-3">Mobile Number: </label>
+                            <input class="outline-none border-black border-b-1" type="tel" id="mobile" name="mobile" required>
+                        </div>
+                        <div class="mail">
+                            <label for="email" class="w-[42%] inline-block text-lg py-3">Email ID:</label>
+                            <input class="outline-none border-black border-b-1" type="email" id="email" name="mail" required>
+                        </div>
+                    </div>
+                    <div class="creds">
+                        <label for="userid" class="w-[42%] inline-block text-lg py-3">Enter your username:</label>
+                        <input class="outline-none border-black border-b-1" type="text" id="userid" name="cuser" required><br>
+                        <label for="password1" class="w-[42%] inline-block text-lg py-3">Enter your password:</label>
+                        <input class="outline-none border-black border-b-1" type="password" id="password1" required><br>
+                        <label for="password2" class="w-[42%] inline-block text-lg py-3">Verify your password:</label>
+                        <input class="outline-none border-black border-b-1" type="password" id="password2" name="cpwd" required><br>
+                        
+                        <!-- Error message for password mismatch -->
+                        <p id="password-match-message" class="text-red font-md">Passwords do not match</p>
+                    </div>
+                    <div class="buttons flex flex-col gap-4">
+                        <button type="submit" class="w-10/12 block m-auto py-2 text-white text-xl rounded-md bg-green-700 border-green-900 border-3 hover:bg-green-900 hover:border-green-800">Submit</button>
+                        
+                        <button type="reset" class="w-10/12 block m-auto py-2 text-white text-xl rounded-md bg-red-700 border-red-900 border-3 hover:bg-red-900 hover:border-red-800">Clear</button>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var password1 = document.getElementById("password1").value;
+            var password2 = document.getElementById("password2").value;
+
+            if (password1 !== password2) {
+                // Passwords do not match, show error message
+                document.getElementById("password-match-message").style.display = "block";
+                return false; // Prevent form submission
+            } else {
+                // Passwords match, hide error message
+                document.getElementById("password-match-message").style.display = "none";
+                return true; // Allow form submission
+            }
+        }
+    </script>
+
+</body>
+
+</html>
